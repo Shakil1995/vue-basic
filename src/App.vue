@@ -1,52 +1,30 @@
 <template>
-  <div>
-    <!-- <h1>EmployeeTable app</h1> -->
-    <EmployeeForm @add:employee="addEmployee" />
-    <EmployeeTable :employees="employees" />
+  <div class="container">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   
+    
+  <PostIndex/>
   </div>
 </template>
 
 <script>
-import EmployeeForm from "./components/EmployeeForm.vue";
-import EmployeeTable from "./components/EmployeeTable.vue";
+
+
+import PostIndex from "./components/PostIndex.vue";
 export default {
   name: "App",
   data() {
     return {
-      employees: [
-        {
-          id: 1,
-          name: "shakil Nurul Amin",
-          email: "shail.cse201@gmail.com",
-        },
-        {
-          id: 2,
-          name: " Nurul ",
-          email: "shail.cse@gmail.com",
-        },
-        {
-          id: 3,
-          name: "Amin",
-          email: "shail.01@gmil.com",
-        },
-      ],
+     
     };
   },
   components: {
-    EmployeeTable,
-    EmployeeForm,
+  
+  PostIndex,
   },
-  methods: {
-    addEmployee(employee) {
-      const lastID =
-        this.employees.length > 0
-          ? this.employees[this.employees.length - 1].id
-          : 0;
-      const id = lastID + 1;
-      const newEmployee = { ...employee, id };
-      this.employees = [...this.employees, newEmployee];
-    },
-  },
+ 
+
 };
 </script>
 
